@@ -1,0 +1,18 @@
+<h1> 👾 Des 🔢 et des 🔡 👾</h1>
+<!-- <p>Find me in app/views/games/new.html.erb</p> -->
+
+<h2>*** Welcome to the longest word-game!***</h2>
+<h3>Here is your grid:</h3>
+<ul class="list">
+  <%= @letters.join(" ") %>
+</ul>
+<p>*****************************************************</p>
+
+<h3>What's the longest word you can find?</h3>
+<form action="/score" method="post">
+  <input type="text" class="answer" name="answer">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="submit" class="btn" value="Play">
+  @letters = <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>
+<p>*****************************************************</p>
